@@ -1,0 +1,66 @@
+<app-title titulo="Categoria"></app-title>
+
+<ion-content>
+  <ion-card *ngIf="categoria" class="animate__animated animate__fadeIn">
+
+    <ion-card-header>
+      <ion-card-subtitle>
+      </ion-card-subtitle>
+      <ion-card-title> <b> {{ categoria.nombre }} </b> </ion-card-title>
+    </ion-card-header>
+
+    <div class="img" style="width: 40%;">
+      <ion-img *ngIf="categoria.imagen" class="animated fadeIn fast" [src]="categoria.imagen"></ion-img>
+    </div>
+    <ion-card-content>
+      <p style="white-space: pre-line" ion-text [innerHtml]="categoria.descripcion"></p>
+    </ion-card-content>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngIf="categoria.link_pdf">
+          <ion-button type="button" (click)="verPdf(categoria.link_pdf)" expand="block">
+            <ion-icon slot="start" name="document-attach-outline"></ion-icon>
+            Ver Pdf
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="secondary" (click)="enviarWhatsapp(categoria.nombre)" type="button" expand="block">
+            <ion-icon slot="start" name="logo-whatsapp"></ion-icon>
+            Solicitar mas información
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+  </ion-card>
+
+  <ion-card *ngIf="productos.length>0" class="animate__animated animate__fadeIn">
+
+    <ion-card-header>
+      <ion-card-subtitle>
+      </ion-card-subtitle>
+      <ion-card-title> <b> Productos de esta categoría </b> </ion-card-title>
+    </ion-card-header>
+
+    <ion-grid fixed>
+      <ion-row class="ion-no-padding ion-align-items-center">
+
+        <ion-col size="6" size-lg="3" size-md="4" size-sm="6" size-xs="6" class="ion-no-padding" *ngFor="let producto of productos">
+
+          <ion-img class="animate__animated animate__fadeIn" [src]="producto.imagen"></ion-img>
+          <div *ngIf="producto.nombre" class="myOverlay">
+            <ion-card-title style="font-size: 0.8rem;"> <b> {{ producto.nombre }} </b> </ion-card-title>
+          </div>
+
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+  </ion-card>
+
+
+
+</ion-content>

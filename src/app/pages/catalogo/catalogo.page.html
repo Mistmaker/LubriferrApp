@@ -1,0 +1,20 @@
+<app-header titulo="Catálogo"></app-header>
+
+<ion-content>
+
+  <ion-grid fixed>
+    <ion-row class="ion-no-padding ion-align-items-center">
+
+      <ion-col size="6" size-lg="3" size-md="4" size-sm="6" size-xs="6" class="ion-no-padding" *ngFor="let producto of categorias">
+
+        <ion-img class="animate__animated animate__fadeIn" routerLink="./{{ producto.id }}" [src]="producto.imagen"></ion-img>
+        <div *ngIf="producto.nombre" class="myOverlay">
+          <ion-card-title style="font-size: 0.8rem;"> <b> {{ producto.nombre }} </b> </ion-card-title>
+        </div>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

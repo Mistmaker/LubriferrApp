@@ -1,0 +1,7 @@
+{
+  "name": "LubriferrApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

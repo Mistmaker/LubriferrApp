@@ -1,0 +1,22 @@
+.img {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px) {
+    .img {
+        width: 50%;
+    }
+}
+@media (min-width: 992px) {
+    .img {
+        width: 50%;
+    }
+}
+@media (min-width: 1000px) {
+    .img {
+        width: 50%;
+    }
+}

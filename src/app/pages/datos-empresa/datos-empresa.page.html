@@ -1,0 +1,17 @@
+<app-header titulo="Datos Empresa"></app-header>
+
+<ion-content class="animate__animated animate__fadeIn">
+
+  <h3 class="centrado">Lubriferr, la mejor opción al momento de construir</h3>
+
+  <section>
+    <header>Interactúa con nosotros</header>
+    <ion-button size="small" (click)="tab='QS'">Quienes Somos</ion-button>
+    <ion-button size="small" (click)="tab='CL'" color="secondary">Como llegar</ion-button>
+    <ion-button size="small" (click)="tab='SU'" color="tertiary">Sugerencias</ion-button>
+  </section>
+
+  <app-quienes-somos *ngIf="tab=='QS'"></app-quienes-somos>
+  <app-como-llegar *ngIf="tab=='CL'"></app-como-llegar>
+
+</ion-content>
